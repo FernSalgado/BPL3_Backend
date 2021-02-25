@@ -1,0 +1,99 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\FERNANDODASILVASALGA\\Documents\\repos\\bpl3_backend\\BPL3_Backend\\BPL3_Backend.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\FERNANDODASILVASALGA\\Documents\\repos\\bpl3_backend\\BPL3_Backend\\BPL3_Backend.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\FERNANDODASILVASALGA\\Documents\\repos\\bpl3_backend\\BPL3_Backend\\BPL3_Backend.csproj",
+        "projectName": "BPL3_Backend",
+        "projectPath": "C:\\Users\\FERNANDODASILVASALGA\\Documents\\repos\\bpl3_backend\\BPL3_Backend\\BPL3_Backend.csproj",
+        "packagesPath": "C:\\Users\\FERNANDODASILVASALGA\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\FERNANDODASILVASALGA\\Documents\\repos\\bpl3_backend\\BPL3_Backend\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\FERNANDODASILVASALGA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "AngleSharp": {
+              "target": "Package",
+              "version": "[0.14.0, )"
+            },
+            "Hangfire": {
+              "target": "Package",
+              "version": "[1.7.19, )"
+            },
+            "Hangfire.AspNetCore": {
+              "target": "Package",
+              "version": "[1.7.19, )"
+            },
+            "Hangfire.Core": {
+              "target": "Package",
+              "version": "[1.7.19, )"
+            },
+            "Hangfire.MemoryStorage": {
+              "target": "Package",
+              "version": "[1.7.0, )"
+            },
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[2.11.6, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.11.6, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
