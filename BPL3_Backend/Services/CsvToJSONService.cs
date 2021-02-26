@@ -47,7 +47,7 @@ namespace BPL3_Backend.Services
             List<TeamList> _twisted = _theTwistedRepository.Read().ToList();
             List<TeamList> _formed = _theFormedRepository.Read().ToList();
             List<TeamList> _hidden = _theHiddenRepository.Read().ToList();
-            List<Member> _members = JsonSerializer.Deserialize<List<Member>>(File.ReadAllText(filePathBase + "\\BPL3Members.json"));
+            List<Member> _members = new List<Member>();
 
             FileStream fileStream = new FileStream("C:\\Users\\FERNANDODASILVASALGA\\source\\repos\\BPL3_Backend\\BPL3_Backend\\JSONs\\BPL3.txt", FileMode.Open);
             using (StreamReader reader = new StreamReader(fileStream))

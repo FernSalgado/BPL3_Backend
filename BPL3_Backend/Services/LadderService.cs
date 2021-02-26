@@ -25,16 +25,18 @@ namespace BPL3_Backend.Services
             teams = t;
             var total = members.Count();
             var count = 0;
+            var update = false;
             do
             {
                 client.DefaultRequestHeaders.Accept.Clear();
-                var url = ($"https://www.pathofexile.com/api/ladders?offset={count}&limit=200&id=Cops+VS+Robbers+(PL12168)&type=league&realm=pc&_=1612548934164");
+                var url = ($"https://www.pathofexile.com/api/ladders?offset={count}&limit=200&id=Badgers%20Invitational%20(PL13903)&type=league&realm=pc&_=1612548934164");
                 var streamTask = client.GetStringAsync(url);
                 var aaa = streamTask.Result;
                 aaa = aaa.Replace("\"class\"", "\"Class\"");
                 dynamic json = Newtonsoft.Json.JsonConvert.DeserializeObject(aaa);
                 foreach (var item in json.entries)
                 {
+                    update = true;
                     string name = item.account.name;
                     Member m = members.Where(m => m.AccountName.ToLower() == name.ToLower()).FirstOrDefault();
                     if (m != null)
@@ -63,35 +65,37 @@ namespace BPL3_Backend.Services
                 }
                 count += 200;
             } while (count < total);
-            members.RemoveAll(me => me.CharacterName == null);
-            _memberService.UpdateMany(members);
-            List<Member> theTwistedMembers = members.Where(m => m.TeamName == "The Twisted").ToList();
-            List<Member> theFearedMembers = members.Where(m => m.TeamName == "The Feared").ToList();
-            List<Member> theHiddenMembers = members.Where(m => m.TeamName == "The Hidden").ToList();
-            List<Member> theFormedMembers = members.Where(m => m.TeamName == "The Formed").ToList();
-            Team theTwisted = teams.Where(t => t.Name == "The Twisted").FirstOrDefault();
-            Team theFeared = teams.Where(t => t.Name == "The Feared").FirstOrDefault();
-            Team theHidden = teams.Where(t => t.Name == "The Hidden").FirstOrDefault();
-            Team theFormed = teams.Where(t => t.Name == "The Formed").FirstOrDefault();
-            List<int> points = new List<int>();
-            points.AddRange(CalcPoints(theTwistedMembers));
-            points.AddRange(CalcPoints(theFearedMembers));
-            points.AddRange(CalcPoints(theHiddenMembers));
-            points.AddRange(CalcPoints(theFormedMembers));
-            theTwisted.LevelPoints = points[0];
-            theTwisted.DelvePoints = points[1];
-            theTwisted.TotalPoints = theTwisted.LevelPoints + theTwisted.DelvePoints + theTwisted.SetPoints;
-            theFeared.LevelPoints = points[2];
-            theFeared.DelvePoints = points[3];
-            theFeared.TotalPoints = theFeared.LevelPoints + theFeared.DelvePoints + theFeared.SetPoints;
-            theHidden.LevelPoints = points[4];
-            theHidden.DelvePoints = points[5];
-            theHidden.TotalPoints = theHidden.LevelPoints + theHidden.DelvePoints + theHidden.SetPoints;
-            theFormed.LevelPoints = points[6];
-            theFormed.DelvePoints = points[7];
-            theFormed.TotalPoints = theFormed.LevelPoints + theFormed.DelvePoints + theFormed.SetPoints;
-
-            _teamService.UpdateMany(new List<Team> {theFeared, theTwisted, theFormed,theHidden });
+            if (update) 
+            {
+                members.RemoveAll(me => me.CharacterName == null);
+                _memberService.UpdateMany(members);
+                List<Member> theTwistedMembers = members.Where(m => m.TeamName == "The Twisted").ToList();
+                List<Member> theFearedMembers = members.Where(m => m.TeamName == "The Feared").ToList();
+                List<Member> theHiddenMembers = members.Where(m => m.TeamName == "The Hidden").ToList();
+                List<Member> theFormedMembers = members.Where(m => m.TeamName == "The Formed").ToList();
+                Team theTwisted = teams.Where(t => t.Name == "The Twisted").FirstOrDefault();
+                Team theFeared = teams.Where(t => t.Name == "The Feared").FirstOrDefault();
+                Team theHidden = teams.Where(t => t.Name == "The Hidden").FirstOrDefault();
+                Team theFormed = teams.Where(t => t.Name == "The Formed").FirstOrDefault();
+                List<int> points = new List<int>();
+                points.AddRange(CalcPoints(theTwistedMembers));
+                points.AddRange(CalcPoints(theFearedMembers));
+                points.AddRange(CalcPoints(theHiddenMembers));
+                points.AddRange(CalcPoints(theFormedMembers));
+                theTwisted.LevelPoints = points[0];
+                theTwisted.DelvePoints = points[1];
+                theTwisted.TotalPoints = theTwisted.LevelPoints + theTwisted.DelvePoints + theTwisted.SetPoints;
+                theFeared.LevelPoints = points[2];
+                theFeared.DelvePoints = points[3];
+                theFeared.TotalPoints = theFeared.LevelPoints + theFeared.DelvePoints + theFeared.SetPoints;
+                theHidden.LevelPoints = points[4];
+                theHidden.DelvePoints = points[5];
+                theHidden.TotalPoints = theHidden.LevelPoints + theHidden.DelvePoints + theHidden.SetPoints;
+                theFormed.LevelPoints = points[6];
+                theFormed.DelvePoints = points[7];
+                theFormed.TotalPoints = theFormed.LevelPoints + theFormed.DelvePoints + theFormed.SetPoints;
+                _teamService.UpdateMany(new List<Team> {theFeared, theTwisted, theFormed,theHidden });
+            }
         }
         private static List<int> CalcPoints(List<Member> members)
         {

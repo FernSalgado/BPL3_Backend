@@ -82,16 +82,16 @@ namespace BPL3_Backend
 
             app.UseAuthorization();
             app.UseHangfireDashboard();
-            recurringJobManager.AddOrUpdate(
-                "Create base files",
-                () => serviceProvider.GetService<ICsvToJSONService>().ReadTeamFile(),
-                Cron.Monthly()
-            );
+            //recurringJobManager.AddOrUpdate(
+            //    "Create base files",
+            //    () => serviceProvider.GetService<ICsvToJSONService>().ReadTeamFile(),
+            //    Cron.Monthly()
+            //);
 
             recurringJobManager.AddOrUpdate(
                 "Get Items",
                 () => serviceProvider.GetService<WebScrappingService>().ScrapperItems(),
-                Cron.Hourly
+                Cron.MinuteInterval(10)
                 );
 
             app.UseEndpoints(endpoints =>
