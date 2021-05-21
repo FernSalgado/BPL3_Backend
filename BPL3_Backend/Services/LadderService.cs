@@ -29,11 +29,12 @@ namespace BPL3_Backend.Services
             do
             {
                 client.DefaultRequestHeaders.Accept.Clear();
-                var url = ($"https://www.pathofexile.com/api/ladders?offset={count}&limit=200&id=Badgers%20Invitational%20(PL13903)&type=league&realm=pc&_=1612548934164");
+                var url = ($"https://www.pathofexile.com/api/ladders?offset={count}&limit=200&id=Rebellion%20BPL%20(PL16111)&type=league&realm=pc&_=1612548934164&type=league&realm=pc&_=1612548934164");
                 var streamTask = client.GetStringAsync(url);
                 var aaa = streamTask.Result;
                 aaa = aaa.Replace("\"class\"", "\"Class\"");
                 dynamic json = Newtonsoft.Json.JsonConvert.DeserializeObject(aaa);
+                if (json.entries.Count == 0) count = total; ;
                 foreach (var item in json.entries)
                 {
                     update = true;
@@ -45,8 +46,7 @@ namespace BPL3_Backend.Services
                         if (m.CharacterName == null)
                         {
                             m.CharacterName = item.character.name;
-                            string c = item.character.Class;
-                            m.Class = IsClassValid(team.AllowedClasses, c) ? c : $"Invalid Class ({item.character.Class})";
+                            m.Class = item.character.Class;
                             m.Rank = item.rank;
                         }
                         else
@@ -56,7 +56,7 @@ namespace BPL3_Backend.Services
                                 m.CharacterName = item.character.level > m.Level ? item.character.name : m.CharacterName;
                                 if (m.CharacterName != item.character.name.ToString()) continue;
                             }
-                            m.Class = IsClassValid(team.AllowedClasses, item.character.Class.ToString()) ? item.character.Class : $"Invalid Class ({item.character.Class})";
+                            m.Class = item.character.Class;
                         }
                         m.Level = item.character.level;
                         m.Rank = item.rank;
@@ -69,32 +69,26 @@ namespace BPL3_Backend.Services
             {
                 members.RemoveAll(me => me.CharacterName == null);
                 _memberService.UpdateMany(members);
-                List<Member> theTwistedMembers = members.Where(m => m.TeamName == "The Twisted").ToList();
-                List<Member> theFearedMembers = members.Where(m => m.TeamName == "The Feared").ToList();
-                List<Member> theHiddenMembers = members.Where(m => m.TeamName == "The Hidden").ToList();
-                List<Member> theFormedMembers = members.Where(m => m.TeamName == "The Formed").ToList();
-                Team theTwisted = teams.Where(t => t.Name == "The Twisted").FirstOrDefault();
-                Team theFeared = teams.Where(t => t.Name == "The Feared").FirstOrDefault();
-                Team theHidden = teams.Where(t => t.Name == "The Hidden").FirstOrDefault();
-                Team theFormed = teams.Where(t => t.Name == "The Formed").FirstOrDefault();
+                List<Member> team1Members = members.Where(m => m.TeamName == "Order").ToList();
+                List<Member> team2Members = members.Where(m => m.TeamName == "Chaos").ToList();
+                List<Member> team3Members = members.Where(m => m.TeamName == "Ruin").ToList();
+                Team team1 = teams.Where(t => t.Name == "Order").FirstOrDefault();
+                Team team2 = teams.Where(t => t.Name == "Chaos").FirstOrDefault();
+                Team team3 = teams.Where(t => t.Name == "Ruin").FirstOrDefault();
                 List<int> points = new List<int>();
-                points.AddRange(CalcPoints(theTwistedMembers));
-                points.AddRange(CalcPoints(theFearedMembers));
-                points.AddRange(CalcPoints(theHiddenMembers));
-                points.AddRange(CalcPoints(theFormedMembers));
-                theTwisted.LevelPoints = points[0];
-                theTwisted.DelvePoints = points[1];
-                theTwisted.TotalPoints = theTwisted.LevelPoints + theTwisted.DelvePoints + theTwisted.SetPoints;
-                theFeared.LevelPoints = points[2];
-                theFeared.DelvePoints = points[3];
-                theFeared.TotalPoints = theFeared.LevelPoints + theFeared.DelvePoints + theFeared.SetPoints;
-                theHidden.LevelPoints = points[4];
-                theHidden.DelvePoints = points[5];
-                theHidden.TotalPoints = theHidden.LevelPoints + theHidden.DelvePoints + theHidden.SetPoints;
-                theFormed.LevelPoints = points[6];
-                theFormed.DelvePoints = points[7];
-                theFormed.TotalPoints = theFormed.LevelPoints + theFormed.DelvePoints + theFormed.SetPoints;
-                _teamService.UpdateMany(new List<Team> {theFeared, theTwisted, theFormed,theHidden });
+                points.AddRange(CalcPoints(team1Members));
+                points.AddRange(CalcPoints(team2Members));
+                points.AddRange(CalcPoints(team3Members));
+                team1.LevelPoints = points[0];
+                team1.DelvePoints = points[1];
+                team1.TotalPoints = team1.LevelPoints + team1.DelvePoints + team1.SetPoints;
+                team2.LevelPoints = points[2];
+                team2.DelvePoints = points[3];
+                team2.TotalPoints = team2.LevelPoints + team2.DelvePoints + team2.SetPoints;
+                team3.LevelPoints = points[4];
+                team3.DelvePoints = points[5];
+                team3.TotalPoints = team3.LevelPoints + team3.DelvePoints + team3.SetPoints;
+                _teamService.UpdateMany(new List<Team> {team2, team1,team3 });
             }
         }
         private static List<int> CalcPoints(List<Member> members)
@@ -113,60 +107,43 @@ namespace BPL3_Backend.Services
         {
             int points = 0;
 
-            if (level <= 95)
+            if (level <= 90)
             {
                 points += level;
             }
             else
             {
-                points += (level + ((level - 95) * 5));
+                if (level > 95) 
+                {
+                    points += 105;
+                }
+                else
+                {
+                    var multi = level - 90;
+                    points += 90 + (multi * 3);
+                }
             }
-
-            if (level >= 10 && level <= 80)
-            {
-                points += (level / 10) * 2;
-            }
-            else
-            {
-                if (level >= 85) points += 5;
-                if (level >= 90) points += 10;
-                if (level >= 55) points += 15;
-            }
+            if (level >= 90) points += 10 + 85;
+            else points += ((int)level / 5)*5;
+            
             return points;
         }
         private static int CalcTeamDelvePoints(int delve)
         {
             int points = 0;
-            int count = 100;
-            if (delve >= 100)
+            if (delve >= 10 && delve <= 250) 
             {
-                while (count <= delve && count <= 500)
-                {
-                    points += 4;
-                    count += 25;
-                }
-                if (delve >= 300 && delve <= 500)
-                {
-                    points += ((delve - 200) / 100) * 4;
-                }
-                if (delve > 600)
-                {
-                    points += 12;
-                    points += (delve - 500) / 10;
-                }
+                points += ((int)delve / 10) * 15;
             }
+            if (delve >= 251 && delve <= 400)
+            {
+                var multi = delve - 250;
+                points += 375 + (multi * 7); //depth 250 and 251+
+
+                if (delve >= 400) points += 200;
+            }
+
             return points;
-        }
-        public static bool IsClassValid(List<string> classes, string Class)
-        {
-            try
-            {
-                return classes.Contains(Class);
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
         }
     }
 }

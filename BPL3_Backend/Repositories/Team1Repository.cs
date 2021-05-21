@@ -5,15 +5,15 @@ using System.Linq;
 
 namespace BPL3_Backend.Repositories
 {
-    public class TheHiddenRepository
+    public class Team1Repository
     {
         private readonly IMongoCollection<TeamList> _member;
 
-        public TheHiddenRepository(IDatabaseSettings settings)
+        public Team1Repository(IDatabaseSettings settings)
         {
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
-            _member = database.GetCollection<TeamList>("TheHidden");
+            _member = database.GetCollection<TeamList>("Order");
         }
 
         public TeamList Create(TeamList team)

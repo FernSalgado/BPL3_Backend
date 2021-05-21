@@ -39,14 +39,12 @@ namespace BPL3_Backend
             services.AddSingleton<WebScrappingService>();
             services.AddSingleton<TeamService>();
             services.AddSingleton<MemberService>();
-            services.AddSingleton<TheFormedRepository>();
-            services.AddSingleton<TheTwistedRepository>();
-            services.AddSingleton<TheFearedRepository>();
-            services.AddSingleton<TheHiddenRepository>();
-            services.AddSingleton<TheFormedItemRepository>();
-            services.AddSingleton<TheTwistedItemRepository>();
-            services.AddSingleton<TheFearedItemRepository>();
-            services.AddSingleton<TheHiddenItemRepository>();
+            services.AddSingleton<Team3Repository>();
+            services.AddSingleton<Team1Repository>();
+            services.AddSingleton<Team2Repository>();
+            services.AddSingleton<Team1ItemRepository>();
+            services.AddSingleton<Team2ItemRepository>();
+            services.AddSingleton<Team3ItemRepository>();
 
             services.AddControllers();
 
@@ -91,7 +89,7 @@ namespace BPL3_Backend
             recurringJobManager.AddOrUpdate(
                 "Get Items",
                 () => serviceProvider.GetService<WebScrappingService>().ScrapperItems(),
-                Cron.MinuteInterval(10)
+                Cron.MinuteInterval(20)
                 );
 
             app.UseEndpoints(endpoints =>

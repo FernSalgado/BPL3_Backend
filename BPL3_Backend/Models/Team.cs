@@ -18,6 +18,7 @@ namespace BPL3_Backend.Models
         public int LevelPoints { get; set; }
         public int DelvePoints { get; set; }
         public int SetPoints { get; set; }
+        public int BossPoints { get; set; }
         public string StashUrl { get; set; }
         public List<string> AllowedClasses { get; set; }
     }

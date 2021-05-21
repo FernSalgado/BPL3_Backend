@@ -1,0 +1,1258 @@
+[
+  {
+    "Name": "Dying Sun",
+    "Obtained": "False",
+    "SetName": "Shaper Set"
+  },
+  {
+    "Name": "Shaper's Touch",
+    "Obtained": "False",
+    "SetName": "Shaper Set"
+  },
+  {
+    "Name": "Solstice Vigil",
+    "Obtained": "False",
+    "SetName": "Shaper Set"
+  },
+  {
+    "Name": "Starforge",
+    "Obtained": "False",
+    "SetName": "Shaper Set"
+  },
+  {
+    "Name": "Voidwalker",
+    "Obtained": "False",
+    "SetName": "Shaper Set"
+  },
+  {
+    "Name": "Impresence (Phys)",
+    "Obtained": "False",
+    "SetName": "Elder Set"
+  },
+  {
+    "Name": "Impresence (Fire)",
+    "Obtained": "False",
+    "SetName": "Elder Set"
+  },
+  {
+    "Name": "Impresence (Cold)",
+    "Obtained": "False",
+    "SetName": "Elder Set"
+  },
+  {
+    "Name": "Impresence (Lightning)",
+    "Obtained": "False",
+    "SetName": "Elder Set"
+  },
+  {
+    "Name": "Impresence (Chaos)",
+    "Obtained": "False",
+    "SetName": "Elder Set"
+  },
+  {
+    "Name": "Cyclopean Coil",
+    "Obtained": "False",
+    "SetName": "Elder Set"
+  },
+  {
+    "Name": "Hopeshredder",
+    "Obtained": "False",
+    "SetName": "Elder Set"
+  },
+  {
+    "Name": "Blasphemer's Grasp",
+    "Obtained": "False",
+    "SetName": "Elder Set"
+  },
+  {
+    "Name": "Shimmeron",
+    "Obtained": "False",
+    "SetName": "Elder Set"
+  },
+  {
+    "Name": "Nebuloch",
+    "Obtained": "False",
+    "SetName": "Elder Set"
+  },
+  {
+    "Name": "Watcher's Eye",
+    "Obtained": "False",
+    "SetName": "Elder Set"
+  },
+  {
+    "Name": "The Eternity Shroud",
+    "Obtained": "False",
+    "SetName": "Uber Elder Set"
+  },
+  {
+    "Name": "Disintegrator",
+    "Obtained": "False",
+    "SetName": "Uber Elder Set"
+  },
+  {
+    "Name": "Voidfletcher",
+    "Obtained": "False",
+    "SetName": "Uber Elder Set"
+  },
+  {
+    "Name": "Mark of the Elder",
+    "Obtained": "False",
+    "SetName": "Uber Elder Set"
+  },
+  {
+    "Name": "Mark of the Shaper",
+    "Obtained": "False",
+    "SetName": "Uber Elder Set"
+  },
+  {
+    "Name": "Indigon",
+    "Obtained": "False",
+    "SetName": "Uber Elder Set"
+  },
+  {
+    "Name": "Voidforge",
+    "Obtained": "False",
+    "SetName": "Uber Elder Set"
+  },
+  {
+    "Name": "Watcher's Eye",
+    "Obtained": "False",
+    "SetName": "Uber Elder Set"
+  },
+  {
+    "Name": "Bottled Faith",
+    "Obtained": "False",
+    "SetName": "Synthesis Set"
+  },
+  {
+    "Name": "Circle of Anguish",
+    "Obtained": "False",
+    "SetName": "Synthesis Set"
+  },
+  {
+    "Name": "Circle of Fear",
+    "Obtained": "False",
+    "SetName": "Synthesis Set"
+  },
+  {
+    "Name": "Circle of Guilt",
+    "Obtained": "False",
+    "SetName": "Synthesis Set"
+  },
+  {
+    "Name": "Circle of Nostalgia",
+    "Obtained": "False",
+    "SetName": "Synthesis Set"
+  },
+  {
+    "Name": "Circle of Regret",
+    "Obtained": "False",
+    "SetName": "Synthesis Set"
+  },
+  {
+    "Name": "Garb of the Ephemeral",
+    "Obtained": "False",
+    "SetName": "Synthesis Set"
+  },
+  {
+    "Name": "Offering to the Serpent",
+    "Obtained": "False",
+    "SetName": "Synthesis Set"
+  },
+  {
+    "Name": "Mask of the Tribunal",
+    "Obtained": "False",
+    "SetName": "Synthesis Set"
+  },
+  {
+    "Name": "Storm's Gift",
+    "Obtained": "False",
+    "SetName": "Synthesis Set"
+  },
+  {
+    "Name": "Perepiteia",
+    "Obtained": "False",
+    "SetName": "Synthesis Set"
+  },
+  {
+    "Name": "Nebulis",
+    "Obtained": "False",
+    "SetName": "Synthesis Set"
+  },
+  {
+    "Name": "Atziri's Acuity",
+    "Obtained": "False",
+    "SetName": "Atziri Set"
+  },
+  {
+    "Name": "Atziri's Disfavour",
+    "Obtained": "False",
+    "SetName": "Atziri Set"
+  },
+  {
+    "Name": "The Vertex",
+    "Obtained": "False",
+    "SetName": "Atziri Set"
+  },
+  {
+    "Name": "Atziri's Splendour",
+    "Obtained": "False",
+    "SetName": "Atziri Set"
+  },
+  {
+    "Name": "Viridi's Veil",
+    "Obtained": "False",
+    "SetName": "Maven Set"
+  },
+  {
+    "Name": "Doppelg�nger Guise",
+    "Obtained": "False",
+    "SetName": "Maven Set"
+  },
+  {
+    "Name": "Arn's Anguish",
+    "Obtained": "False",
+    "SetName": "Maven Set"
+  },
+  {
+    "Name": "Legacy of Fury",
+    "Obtained": "False",
+    "SetName": "Maven Set"
+  },
+  {
+    "Name": "Graven's Secret",
+    "Obtained": "False",
+    "SetName": "Maven Set"
+  },
+  {
+    "Name": "Olesya's Delight",
+    "Obtained": "False",
+    "SetName": "Maven Set"
+  },
+  {
+    "Name": "The Formless Inferno",
+    "Obtained": "False",
+    "SetName": "Xoph Set"
+  },
+  {
+    "Name": "Xoph's Blood",
+    "Obtained": "False",
+    "SetName": "Xoph Set"
+  },
+  {
+    "Name": "Xoph's Nurture",
+    "Obtained": "False",
+    "SetName": "Xoph Set"
+  },
+  {
+    "Name": "The Pandemonius",
+    "Obtained": "False",
+    "SetName": "Tul Set"
+  },
+  {
+    "Name": "The Perfect Form",
+    "Obtained": "False",
+    "SetName": "Tul Set"
+  },
+  {
+    "Name": "Tulfall",
+    "Obtained": "False",
+    "SetName": "Tul Set"
+  },
+  {
+    "Name": "Choir of the Storm",
+    "Obtained": "False",
+    "SetName": "Esh Set"
+  },
+  {
+    "Name": "Hand of Wisdom and Action",
+    "Obtained": "False",
+    "SetName": "Esh Set"
+  },
+  {
+    "Name": "Esh's Visage",
+    "Obtained": "False",
+    "SetName": "Esh Set"
+  },
+  {
+    "Name": "The Surrender",
+    "Obtained": "False",
+    "SetName": "Uul-Netol Set"
+  },
+  {
+    "Name": "The Red Trail",
+    "Obtained": "False",
+    "SetName": "Uul-Netol Set"
+  },
+  {
+    "Name": "Uul-Netol's Embrace",
+    "Obtained": "False",
+    "SetName": "Uul-Netol Set"
+  },
+  {
+    "Name": "Skin of the Lords",
+    "Obtained": "False",
+    "SetName": "Chayula Set"
+  },
+  {
+    "Name": "United in Dream",
+    "Obtained": "False",
+    "SetName": "Chayula Set"
+  },
+  {
+    "Name": "The Blue Nightmare",
+    "Obtained": "False",
+    "SetName": "Chayula Set"
+  },
+  {
+    "Name": "The Green Nightmare",
+    "Obtained": "False",
+    "SetName": "Chayula Set"
+  },
+  {
+    "Name": "The Red Nightmare",
+    "Obtained": "False",
+    "SetName": "Chayula Set"
+  },
+  {
+    "Name": "Atziri's Rule",
+    "Obtained": "False",
+    "SetName": "Atziri Set"
+  },
+  {
+    "Name": "Triumvirate Authority",
+    "Obtained": "False",
+    "SetName": "Atziri Set"
+  },
+  {
+    "Name": "Atziri's Step",
+    "Obtained": "False",
+    "SetName": "Atziri Set"
+  },
+  {
+    "Name": "Doryani's Catalyst",
+    "Obtained": "False",
+    "SetName": "Atziri Set"
+  },
+  {
+    "Name": "Doryani's Invitation",
+    "Obtained": "False",
+    "SetName": "Atziri Set"
+  },
+  {
+    "Name": "Chains of Emancipation",
+    "Obtained": "False",
+    "SetName": "Heist Set"
+  },
+  {
+    "Name": "The Admiral",
+    "Obtained": "False",
+    "SetName": "Heist Set"
+  },
+  {
+    "Name": "Apex Mode",
+    "Obtained": "False",
+    "SetName": "Heist Set"
+  },
+  {
+    "Name": "Nadir Mode",
+    "Obtained": "False",
+    "SetName": "Heist Set"
+  },
+  {
+    "Name": "The Fledgling",
+    "Obtained": "False",
+    "SetName": "Heist Set"
+  },
+  {
+    "Name": "Leadership's Price",
+    "Obtained": "False",
+    "SetName": "Heist Set"
+  },
+  {
+    "Name": "Eber's Unification",
+    "Obtained": "False",
+    "SetName": "Pale Court Set"
+  },
+  {
+    "Name": "Inya's Epiphany",
+    "Obtained": "False",
+    "SetName": "Pale Court Set"
+  },
+  {
+    "Name": "Yriel's Fostering",
+    "Obtained": "False",
+    "SetName": "Pale Court Set"
+  },
+  {
+    "Name": "Volkuur's Guidance",
+    "Obtained": "False",
+    "SetName": "Pale Court Set"
+  },
+  {
+    "Name": "Breath of the Council",
+    "Obtained": "False",
+    "SetName": "Pale Court Set"
+  },
+  {
+    "Name": "Reach of the Council",
+    "Obtained": "False",
+    "SetName": "Pale Court Set"
+  },
+  {
+    "Name": "Mind of the Council",
+    "Obtained": "False",
+    "SetName": "Pale Court Set"
+  },
+  {
+    "Name": "Grip of the Council",
+    "Obtained": "False",
+    "SetName": "Pale Court Set"
+  },
+  {
+    "Name": "Farrul's Chase",
+    "Obtained": "False",
+    "SetName": "Farrul Set"
+  },
+  {
+    "Name": "Farrul's Fur",
+    "Obtained": "False",
+    "SetName": "Farrul Set"
+  },
+  {
+    "Name": "Farrul's Pounce",
+    "Obtained": "False",
+    "SetName": "Farrul Set"
+  },
+  {
+    "Name": "Farrul's Bite",
+    "Obtained": "False",
+    "SetName": "Farrul Set"
+  },
+  {
+    "Name": "Fenumus' Toxins",
+    "Obtained": "False",
+    "SetName": "Fenumus' Set"
+  },
+  {
+    "Name": "Fenumus' Weave",
+    "Obtained": "False",
+    "SetName": "Fenumus' Set"
+  },
+  {
+    "Name": "Fenumus' Shroud",
+    "Obtained": "False",
+    "SetName": "Fenumus' Set"
+  },
+  {
+    "Name": "Fenumus' Spinnerets",
+    "Obtained": "False",
+    "SetName": "Fenumus' Set"
+  },
+  {
+    "Name": "Saqawal's Wind",
+    "Obtained": "False",
+    "SetName": "Saqawal Set"
+  },
+  {
+    "Name": "Saqawal's Flock",
+    "Obtained": "False",
+    "SetName": "Saqawal Set"
+  },
+  {
+    "Name": "Saqawal's Nest",
+    "Obtained": "False",
+    "SetName": "Saqawal Set"
+  },
+  {
+    "Name": "Saqawal's Talons",
+    "Obtained": "False",
+    "SetName": "Saqawal Set"
+  },
+  {
+    "Name": "Craiceann's Carapace",
+    "Obtained": "False",
+    "SetName": "Craiceann Set"
+  },
+  {
+    "Name": "Craiceann's Chitin",
+    "Obtained": "False",
+    "SetName": "Craiceann Set"
+  },
+  {
+    "Name": "Craiceann's Pincers",
+    "Obtained": "False",
+    "SetName": "Craiceann Set"
+  },
+  {
+    "Name": "Craiceann's Tracks",
+    "Obtained": "False",
+    "SetName": "Craiceann Set"
+  },
+  {
+    "Name": "The Devouring Diadem",
+    "Obtained": "False",
+    "SetName": "Betrayal Set"
+  },
+  {
+    "Name": "Cinderswallow Urn",
+    "Obtained": "False",
+    "SetName": "Betrayal Set"
+  },
+  {
+    "Name": "The Queen's Hunger",
+    "Obtained": "False",
+    "SetName": "Betrayal Set"
+  },
+  {
+    "Name": "Cane of Kulemak",
+    "Obtained": "False",
+    "SetName": "Betrayal Set"
+  },
+  {
+    "Name": "Bitterbind Point",
+    "Obtained": "False",
+    "SetName": "Betrayal Set"
+  },
+  {
+    "Name": "Hyperboreus",
+    "Obtained": "False",
+    "SetName": "Betrayal Set"
+  },
+  {
+    "Name": "Paradoxica",
+    "Obtained": "False",
+    "SetName": "Betrayal Set"
+  },
+  {
+    "Name": "Vivinsect",
+    "Obtained": "False",
+    "SetName": "Betrayal Set"
+  },
+  {
+    "Name": "The Crimson Storm",
+    "Obtained": "False",
+    "SetName": "Betrayal Set"
+  },
+  {
+    "Name": "Slavedriver's Hand",
+    "Obtained": "False",
+    "SetName": "Incursion Set"
+  },
+  {
+    "Name": "Zerphi's Heart",
+    "Obtained": "False",
+    "SetName": "Incursion Set"
+  },
+  {
+    "Name": "Transcendent Mind",
+    "Obtained": "False",
+    "SetName": "Incursion Set"
+  },
+  {
+    "Name": "Transcendent Spirit",
+    "Obtained": "False",
+    "SetName": "Incursion Set"
+  },
+  {
+    "Name": "Transcendent Flesh",
+    "Obtained": "False",
+    "SetName": "Incursion Set"
+  },
+  {
+    "Name": "Coward's Legacy",
+    "Obtained": "False",
+    "SetName": "Incursion Set"
+  },
+  {
+    "Name": "Omeyocan",
+    "Obtained": "False",
+    "SetName": "Incursion Set"
+  },
+  {
+    "Name": "Soul Ripper",
+    "Obtained": "False",
+    "SetName": "Incursion Set"
+  },
+  {
+    "Name": "Mask of the Stitched Demon",
+    "Obtained": "False",
+    "SetName": "Incursion Set"
+  },
+  {
+    "Name": "Apep's Supremacy",
+    "Obtained": "False",
+    "SetName": "Incursion Set"
+  },
+  {
+    "Name": "Fate of the Vaal",
+    "Obtained": "False",
+    "SetName": "Incursion Set"
+  },
+  {
+    "Name": "Tombfist",
+    "Obtained": "False",
+    "SetName": "Abyss Set"
+  },
+  {
+    "Name": "Shroud of the Lightless",
+    "Obtained": "False",
+    "SetName": "Abyss Set"
+  },
+  {
+    "Name": "Bubonic Trail",
+    "Obtained": "False",
+    "SetName": "Abyss Set"
+  },
+  {
+    "Name": "Darkness Enthroned",
+    "Obtained": "False",
+    "SetName": "Abyss Set"
+  },
+  {
+    "Name": "Lightpoacher",
+    "Obtained": "False",
+    "SetName": "Abyss Set"
+  },
+  {
+    "Name": "Amanamu's Gaze",
+    "Obtained": "False",
+    "SetName": "Abyss Set"
+  },
+  {
+    "Name": "Ulaman's Gaze",
+    "Obtained": "False",
+    "SetName": "Abyss Set"
+  },
+  {
+    "Name": "Tecrod's Gaze",
+    "Obtained": "False",
+    "SetName": "Abyss Set"
+  },
+  {
+    "Name": "Kurgal's Gaze",
+    "Obtained": "False",
+    "SetName": "Abyss Set"
+  },
+  {
+    "Name": "Astral Projector",
+    "Obtained": "False",
+    "SetName": "Metamorph Set"
+  },
+  {
+    "Name": "Fury Valve",
+    "Obtained": "False",
+    "SetName": "Metamorph Set"
+  },
+  {
+    "Name": "Warrior's Legacy",
+    "Obtained": "False",
+    "SetName": "Metamorph Set"
+  },
+  {
+    "Name": "Mother's Embrace",
+    "Obtained": "False",
+    "SetName": "Metamorph Set"
+  },
+  {
+    "Name": "Witchunter's Judgement",
+    "Obtained": "False",
+    "SetName": "Harvest Set"
+  },
+  {
+    "Name": "Forbidden Shako",
+    "Obtained": "False",
+    "SetName": "Harvest Set"
+  },
+  {
+    "Name": "Law of the Wilds",
+    "Obtained": "False",
+    "SetName": "Harvest Set"
+  },
+  {
+    "Name": "Abhorrent Interrogation",
+    "Obtained": "False",
+    "SetName": "Harvest Set"
+  },
+  {
+    "Name": "The Felbog Fang",
+    "Obtained": "False",
+    "SetName": "Harvest Set"
+  },
+  {
+    "Name": "Plume of Pursuit",
+    "Obtained": "False",
+    "SetName": "Harvest Set"
+  },
+  {
+    "Name": "Bear's Girdle",
+    "Obtained": "False",
+    "SetName": "Harvest Set"
+  },
+  {
+    "Name": "Breathstealer",
+    "Obtained": "False",
+    "SetName": "Blight Set"
+  },
+  {
+    "Name": "Cowl of the Ceraunophile",
+    "Obtained": "False",
+    "SetName": "Blight Set"
+  },
+  {
+    "Name": "Cowl of the Cryophile",
+    "Obtained": "False",
+    "SetName": "Blight Set"
+  },
+  {
+    "Name": "Cowl of the Thermophile",
+    "Obtained": "False",
+    "SetName": "Blight Set"
+  },
+  {
+    "Name": "Sporeguard",
+    "Obtained": "False",
+    "SetName": "Blight Set"
+  },
+  {
+    "Name": "The Stampede",
+    "Obtained": "False",
+    "SetName": "Blight Set"
+  },
+  {
+    "Name": "Spine of The First Claimant",
+    "Obtained": "False",
+    "SetName": "Izaro's Labyrinth Set"
+  },
+  {
+    "Name": "Scales of Justice",
+    "Obtained": "False",
+    "SetName": "Izaro's Labyrinth Set"
+  },
+  {
+    "Name": "Death's Door",
+    "Obtained": "False",
+    "SetName": "Izaro's Labyrinth Set"
+  },
+  {
+    "Name": "Glitterdisc",
+    "Obtained": "False",
+    "SetName": "Izaro's Labyrinth Set"
+  },
+  {
+    "Name": "Izaro's Dilemma",
+    "Obtained": "False",
+    "SetName": "Izaro's Labyrinth Set"
+  },
+  {
+    "Name": "Izaro's Turmoil",
+    "Obtained": "False",
+    "SetName": "Izaro's Labyrinth Set"
+  },
+  {
+    "Name": "Steelworm",
+    "Obtained": "False",
+    "SetName": "Izaro's Labyrinth Set"
+  },
+  {
+    "Name": "Viper's Scales",
+    "Obtained": "False",
+    "SetName": "Izaro's Labyrinth Set"
+  },
+  {
+    "Name": "Winds of Change",
+    "Obtained": "False",
+    "SetName": "Izaro's Labyrinth Set"
+  },
+  {
+    "Name": "Xirgil's Crank",
+    "Obtained": "False",
+    "SetName": "Izaro's Labyrinth Set"
+  },
+  {
+    "Name": "Chitus' Needle",
+    "Obtained": "False",
+    "SetName": "Izaro's Labyrinth Set"
+  },
+  {
+    "Name": "Emperor's Might",
+    "Obtained": "False",
+    "SetName": "Labyrinth Jewel"
+  },
+  {
+    "Name": "Emperor's Cunning",
+    "Obtained": "False",
+    "SetName": "Labyrinth Jewel"
+  },
+  {
+    "Name": "Emperor's Wit",
+    "Obtained": "False",
+    "SetName": "Labyrinth Jewel"
+  },
+  {
+    "Name": "Emperor's Mastery",
+    "Obtained": "False",
+    "SetName": "Labyrinth Jewel"
+  },
+  {
+    "Name": "Replica Abyssus",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Advancing Fortress",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Alberon's Warpath",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Allelopathy",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Allure",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Alpha's Howl",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Ambu's Charge",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Atziri's Acuity",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Atziri's Foible",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Bated Breath",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Bitterdream",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Blood Sacrifice",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Blood Thorn",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Bloodplay",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Bones of Ullr",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Bones of Ullr",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Cold Iron Point",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Cheap Construction",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Conqueror's Efficiency",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Cortex",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Doedre's Damning",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Dreamfeather",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Duskdawn",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Earendel's Embrace",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Emberwake",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Eternity Shroud",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Farrul's Fur",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Fencoil",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Forbidden Shako",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Fragile Bloom",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Frostbreath",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Grip of the Council",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Harvest",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Headhunter",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Heartbreaker",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Hotheaded",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Hyrri's Truth",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Infractem",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Innsbury Edge",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Inya's Epiphany",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Iron Commander",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Kalisa's Grace",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Kaom's Heart",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Karui Ward",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Kongor's Undying Rage",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Last Resort",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Lavianga's Spirit",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Leer Cast",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Lioneye's Paws",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Loreweave",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Malachai's Artifice",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Maloney's Mechanism",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Midnight Bargain",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Mistwall",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Nebulis",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Oro's Sacrifice",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Paradoxica",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Perfect Form",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Pillars of Arun",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Poorjoy's Asylum",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Primordial Might",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Prismweave",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Quill Rain",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Pure Talent",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Reckless Defence",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+
+  {
+    "Name": "Replica Red Trail",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Restless Ward",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Rumi's Concoction",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Shroud of the Lightless",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Siegebreaker",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Sorrow of the Divine",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Soul Strike",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Soul Taker",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Soul Tether",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Stampede",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Tasalio's Sign",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Tempestuous Steel",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Three-step Assault",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Trypanon",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Tukohama's Fortress",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Tulfall",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Twyzel",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Ungil's Gauche",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Unstable Payload",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Victario's Charity",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Voideye",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Volkuur's Guidance",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Voidwalker",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Veil of the Night",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Wings of Entropy",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Windripper",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  },
+  {
+    "Name": "Replica Winterheart",
+    "Obtained": "False",
+    "SetName": "Replica Set"
+  }
+]

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\FERNANDODASILVASALGA\\Documents\\repos\\bpl3_backend\\BPL3_Backend\\BPL3_Backend.csproj": {}
+    "C:\\Users\\Fernando\\Documents\\repo\\bpl3_backend\\BPL3_Backend\\BPL3_Backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\FERNANDODASILVASALGA\\Documents\\repos\\bpl3_backend\\BPL3_Backend\\BPL3_Backend.csproj": {
+    "C:\\Users\\Fernando\\Documents\\repo\\bpl3_backend\\BPL3_Backend\\BPL3_Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\FERNANDODASILVASALGA\\Documents\\repos\\bpl3_backend\\BPL3_Backend\\BPL3_Backend.csproj",
+        "projectUniqueName": "C:\\Users\\Fernando\\Documents\\repo\\bpl3_backend\\BPL3_Backend\\BPL3_Backend.csproj",
         "projectName": "BPL3_Backend",
-        "projectPath": "C:\\Users\\FERNANDODASILVASALGA\\Documents\\repos\\bpl3_backend\\BPL3_Backend\\BPL3_Backend.csproj",
-        "packagesPath": "C:\\Users\\FERNANDODASILVASALGA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\FERNANDODASILVASALGA\\Documents\\repos\\bpl3_backend\\BPL3_Backend\\obj\\",
+        "projectPath": "C:\\Users\\Fernando\\Documents\\repo\\bpl3_backend\\BPL3_Backend\\BPL3_Backend.csproj",
+        "packagesPath": "C:\\Users\\Fernando\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Fernando\\Documents\\repo\\bpl3_backend\\BPL3_Backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\FERNANDODASILVASALGA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Fernando\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -91,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

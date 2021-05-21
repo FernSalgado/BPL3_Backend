@@ -12,71 +12,78 @@ namespace BPL3_Backend.Services
 {
     public class WebScrappingService
     {
-        private readonly TheFearedItemRepository _theFearedItemRepository;
-        private readonly TheFormedItemRepository _theFormedItemRepository;
-        private readonly TheHiddenItemRepository _theHiddenItemRepository;
-        private readonly TheTwistedItemRepository _theTwistedItemRepository;
+        private readonly Team1ItemRepository _team1ItemRepository;
+        private readonly Team3ItemRepository _team3ItemRepository;
+        private readonly Team2ItemRepository _team2ItemRepository;
         private readonly TeamService _teamService;
         private readonly LadderService _ladderService;
         private IBrowsingContext context { get; set; }
 
-        public WebScrappingService(TeamService teamService, TheFearedRepository theFearedRepository, TheFormedRepository theFormedRepository, TheHiddenRepository theHiddenRepository, TheTwistedRepository theTwistedRepository, TheFearedItemRepository theFearedItemRepository, TheFormedItemRepository theFormedItemRepository, TheHiddenItemRepository theHiddenItemRepository, TheTwistedItemRepository theTwistedItemRepository, LadderService ladderService)
+        public WebScrappingService(TeamService teamService, Team1Repository theFearedRepository, Team3Repository theFormedRepository,  Team2Repository theTwistedRepository,
+            Team1ItemRepository team1ItemRepository, Team3ItemRepository team3ItemRepository, Team2ItemRepository team2ItemRepository, LadderService ladderService)
         {
             var config = Configuration.Default.WithDefaultLoader();
             context = BrowsingContext.New(config);
-            _theFearedItemRepository = theFearedItemRepository;
-            _theFormedItemRepository = theFormedItemRepository;
-            _theHiddenItemRepository = theHiddenItemRepository;
-            _theTwistedItemRepository = theTwistedItemRepository;
+            _team1ItemRepository = team1ItemRepository;
+            _team2ItemRepository = team2ItemRepository;
+            _team3ItemRepository = team3ItemRepository;
             _teamService = teamService;
             _ladderService = ladderService;
         }
 
         public async Task ScrapperItems() 
         {
-            var fearedItems = _theFearedItemRepository.Read().ToList();
-            var feared = _teamService.Find("The Feared");
+            var team1Items = _team1ItemRepository.Read().ToList();
+            var team1 = _teamService.Find("Order");
 
-            var twistedItems = _theTwistedItemRepository.Read().ToList();
-            var twisted = _teamService.Find("The Twisted");
+            var team2Items = _team2ItemRepository.Read().ToList();
+            var team2 = _teamService.Find("Chaos");
 
-            var formedItems = _theFormedItemRepository.Read().ToList();
-            var formed = _teamService.Find("The Formed");
+            var team3Items = _team3ItemRepository.Read().ToList();
+            var team3 = _teamService.Find("Ruin");
 
-            var hiddenItems = _theHiddenItemRepository.Read().ToList();
-            var hidden = _teamService.Find("The Hidden");
+            //TeamItem Team1 = await GetItems(new TeamItem { Items = team1Items, Team = team1 });
+            //TeamItem Team2 = await GetItems(new TeamItem { Items = team2Items, Team = team2 });
+            //TeamItem Team3 = await GetItems(new TeamItem { Items = team3Items, Team = team3 });
+            //_team1ItemRepository.UpdateMany(Team1.Items);
+            //_team2ItemRepository.UpdateMany(Team2.Items);
+            //_team3ItemRepository.UpdateMany(Team3.Items);
 
-            TeamItem TheFeared = await GetItems(new TeamItem { Items = fearedItems, Team = feared });
-            TeamItem TheTwisted = await GetItems(new TeamItem { Items = twistedItems, Team = twisted });
-            TeamItem TheFormed = await GetItems(new TeamItem { Items = formedItems, Team = formed });
-            TeamItem TheHidden = await GetItems(new TeamItem { Items = hiddenItems, Team = hidden });
-            _theFearedItemRepository.UpdateMany(TheFeared.Items);
-            _theTwistedItemRepository.UpdateMany(TheTwisted.Items);
-            _theHiddenItemRepository.UpdateMany(TheHidden.Items);
-            _theFormedItemRepository.UpdateMany(TheFormed.Items);
-            _ladderService.GetLadder(new List<Team> { TheFeared.Team, TheTwisted.Team, TheFormed.Team, TheHidden.Team });
+            //_ladderService.GetLadder(new List<Team> { Team1.Team, Team2.Team, Team3.Team });
+
+            _ladderService.GetLadder(new List<Team> { team1, team2, team3});
         }
 
         public async Task<TeamItem> GetItems(TeamItem teamItem)
         {
-            foreach (var item in teamItem.Items)
-            {
-                item.Obtained = "False";
-            }
             List<string> _allItems = JsonSerializer.Deserialize<List<string>>(File.ReadAllText("C:\\Users\\FERNANDODASILVASALGA\\source\\repos\\BPL3\\BPL3\\JSONs\\ItemList.json"));
+            List<string> _allSets = JsonSerializer.Deserialize<List<string>>(File.ReadAllText("C:\\Users\\FERNANDODASILVASALGA\\source\\repos\\BPL3\\BPL3\\JSONs\\SetList.json"));
             List<string> _items = new List<string>();
             for (int i = 1; i < 21; i++)
             {
-                if (i != 5 && i != 19)
-                {
                     var url = $"{teamItem.Team.StashUrl}/{i}";
                     var document = await context.OpenAsync(url);
                     var items = document.QuerySelectorAll(".owned");
                     foreach (var item in items)
                     {
-                        _items.Add(item.FirstElementChild.FirstElementChild.InnerHtml);
+                        var _item = item.FirstElementChild.FirstElementChild.InnerHtml;
+                    if (_item == "Impresence")
+                    {
+                        var count = 0;
+                        var node = item.PreviousElementSibling;
+                        while (node != null && node.FirstElementChild.FirstElementChild.InnerHtml == "Impresence") 
+                        {
+                            node = node.PreviousElementSibling;
+                            count++;
+                        }
+                        if (count == 4) _item = "Impresence (Cold)";
+                        if (count == 3) _item = "Impresence (Lightning)";
+                        if (count == 2) _item = "Impresence (Fire)";
+                        if (count == 1) _item = "Impresence (Phys)";
+                        if (count == 0) _item = "Impresence (Chaos)";
                     }
-                }
+                        _items.Add(_item);
+                    }
             }
             var results = _items.Select(i => i).ToList().Intersect(_allItems.Select(i => i).ToList()).ToList();
             foreach (var item in results)
@@ -85,33 +92,13 @@ namespace BPL3_Backend.Services
                 if (i != null)
                 {
                     i.Obtained = "True";
-                    var set = teamItem.Items.Where(it => it.SetName == i.SetName && it.Obtained == "False").ToList();
-                    if (set.Count == 0) 
-                    {
-                        if (i.SetName != "Xoph's Set" && i.SetName != "Esh's Set" && i.SetName != "Tul's Set" && i.SetName != "Uul-Netol's Set" && i.SetName != "Chayula's Set")
-                        {
-                            if (i.SetName == "Shaper's Set") teamItem.Team.SetPoints += 200;
-                            if (i.SetName == "Elder's Set") teamItem.Team.SetPoints += 200;
-                            if (i.SetName == "Uber Elder's Set") teamItem.Team.SetPoints += 550;
-                            if (i.SetName == "Maven's Set") teamItem.Team.SetPoints += 550;
-                            if (i.SetName == "Synthesis Set") teamItem.Team.SetPoints += 425;
-                            if (i.SetName == "Uber Atziri's Set") teamItem.Team.SetPoints += 425;
-                        }
-                        else 
-                        {
-                            var xoph = teamItem.Items.Where(it => it.SetName == "Xoph's Set" && it.Obtained == "False").ToList();
-                            var esh = teamItem.Items.Where(it => it.SetName == "Esh's Set" && it.Obtained == "False").ToList();
-                            var uul = teamItem.Items.Where(it => it.SetName == "Uul-Netol's Set" && it.Obtained == "False").ToList();
-                            var tul = teamItem.Items.Where(it => it.SetName == "Tul's Set" && it.Obtained == "False").ToList();
-                            var chay = teamItem.Items.Where(it => it.SetName == "Chayula's Set" && it.Obtained == "False").ToList();
-                            var count = xoph.Count + esh.Count + uul.Count + tul.Count + chay.Count;
-                            if (count == 0)
-                            {
-                                teamItem.Team.SetPoints += 425;
-                            }
-                        }
-                    }
+                    teamItem.Team.SetPoints += 250;
                 }
+            }
+            foreach (var item in _allSets)
+            {
+                var set = teamItem.Items.Where(i => i.SetName == item && i.Obtained == "False").ToList();
+                if (set.Count == 0) teamItem.Team.SetPoints += 500;
             }
             return teamItem;
         }

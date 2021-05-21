@@ -19,37 +19,32 @@ namespace BPL3_Backend.Services
     {
         public static readonly string filePathBase = "C:\\Users\\FERNANDODASILVASALGA\\Documents\\repos\\BPL3_Backend\\BPL3\\JSONs\\";
         private readonly MemberService _memberService;
-        private readonly TheFearedRepository  _theFearedRepository;
-        private readonly TheFormedRepository  _theFormedRepository;
-        private readonly TheHiddenRepository  _theHiddenRepository;
-        private readonly TheTwistedRepository _theTwistedRepository;
-        private readonly TheFearedItemRepository _theFearedItemRepository;
-        private readonly TheFormedItemRepository _theFormedItemRepository;
-        private readonly TheHiddenItemRepository _theHiddenItemRepository;
-        private readonly TheTwistedItemRepository _theTwistedItemRepository;
+        private readonly Team1Repository _team1Repository;
+        private readonly Team2Repository _team2Repository;
+        private readonly Team3Repository _team3Repository;
+        private readonly Team1ItemRepository _team1ItemRepository;
+        private readonly Team2ItemRepository _team2ItemRepository;
+        private readonly Team3ItemRepository _team3ItemRepository;
 
-        public CsvToJSONService(MemberService memberService, TheFearedRepository theFearedRepository, TheFormedRepository theFormedRepository, 
-            TheHiddenRepository theHiddenRepository, TheTwistedRepository theTwistedRepository, TheFearedItemRepository theFearedItemRepository, TheFormedItemRepository theFormedItemRepository, TheHiddenItemRepository theHiddenItemRepository, TheTwistedItemRepository theTwistedItemRepository)
+        public CsvToJSONService(MemberService memberService, Team1Repository team1Repository, Team3Repository theFormedRepository, 
+             Team2Repository team2Repository, Team1ItemRepository team1ItemRepository, Team3ItemRepository team3ItemRepository, Team2ItemRepository team2ItemRepository)
         {
             _memberService = memberService;
-            _theFearedRepository = theFearedRepository;
-            _theFormedRepository = theFormedRepository;
-            _theHiddenRepository = theHiddenRepository;
-            _theTwistedRepository = theTwistedRepository;
-            _theFearedItemRepository = theFearedItemRepository;
-            _theFormedItemRepository = theFormedItemRepository;
-            _theHiddenItemRepository = theHiddenItemRepository;
-            _theTwistedItemRepository = theTwistedItemRepository;
+            _team1Repository = team1Repository;
+            _team2Repository = team2Repository;
+            _team3Repository = theFormedRepository;
+            _team1ItemRepository = team1ItemRepository;
+            _team2ItemRepository = team2ItemRepository;
+            _team3ItemRepository = team3ItemRepository;
         }
         public void ReadTeamFile()
         {
-            List<TeamList> _feared = _theFearedRepository.Read().ToList();
-            List<TeamList> _twisted = _theTwistedRepository.Read().ToList();
-            List<TeamList> _formed = _theFormedRepository.Read().ToList();
-            List<TeamList> _hidden = _theHiddenRepository.Read().ToList();
+            List<TeamList> _team1 = _team1Repository.Read().ToList();
+            List<TeamList> _team2 = _team2Repository.Read().ToList();
+            List<TeamList> _team3 = _team3Repository.Read().ToList();
             List<Member> _members = new List<Member>();
 
-            FileStream fileStream = new FileStream("C:\\Users\\FERNANDODASILVASALGA\\source\\repos\\BPL3_Backend\\BPL3_Backend\\JSONs\\BPL3.txt", FileMode.Open);
+            FileStream fileStream = new FileStream("C:\\Users\\Fernando\\Documents\\repo\\bpl3_backend\\BPL3_Backend\\JSONs\\bpl.txt", FileMode.Open);
             using (StreamReader reader = new StreamReader(fileStream))
             {
                 while (!reader.EndOfStream)
@@ -63,8 +58,8 @@ namespace BPL3_Backend.Services
                         TeamList tl = new TeamList();
                         tl.Name = lLine[0];
                         m1.AccountName = lLine[0];
-                        m1.TeamName = "The Feared";
-                        _feared.Add(tl);
+                        m1.TeamName = "Order";
+                        _team1.Add(tl);
                         _members.Add(m1);
                     }
                     if (lLine[1] != string.Empty)
@@ -73,8 +68,8 @@ namespace BPL3_Backend.Services
                         TeamList tl = new TeamList();
                         tl.Name = lLine[1];
                         m2.AccountName = lLine[1];
-                        m2.TeamName = "The Formed";
-                        _formed.Add(tl);
+                        m2.TeamName = "Chaos";
+                        _team2.Add(tl);
                         _members.Add(m2);
                     }
                     if (lLine[2] != string.Empty)
@@ -83,25 +78,14 @@ namespace BPL3_Backend.Services
                         TeamList tl = new TeamList();
                         tl.Name = lLine[2];
                         m3.AccountName = lLine[2];
-                        m3.TeamName = "The Hidden";
-                        _hidden.Add(tl);
+                        m3.TeamName = "Ruin";
+                        _team3.Add(tl);
                         _members.Add(m3);
                     }
-                    if (lLine[3] != string.Empty)
-                    {
-                        Member m4 = new Member();
-                        TeamList tl = new TeamList();
-                        tl.Name = lLine[3];
-                        m4.AccountName = lLine[3];
-                        m4.TeamName = "The Twisted";
-                        _twisted.Add(tl);
-                        _members.Add(m4);
-                    }
                 }
-                _theFearedRepository.CreateMany(_feared);
-                _theFormedRepository.CreateMany(_formed);
-                _theHiddenRepository.CreateMany(_hidden);
-                _theTwistedRepository.CreateMany(_twisted);
+                _team1Repository.CreateMany(_team1);
+                _team2Repository.CreateMany(_team2);
+                _team3Repository.CreateMany(_team3);
                 _memberService.CreateMany(_members);
             }
         }
@@ -109,11 +93,10 @@ namespace BPL3_Backend.Services
 
         public void CreateItemList() 
         {
-            List<Item> items = JsonSerializer.Deserialize<List<Item>>(File.ReadAllText("C:\\Users\\FERNANDODASILVASALGA\\Documents\\repos\\BPL3_Backend\\BPL3\\JSONs\\The Twisted\\TheTwistedItems.json"));
-            _theFearedItemRepository.CreateMany(items);
-            _theFormedItemRepository.CreateMany(items);
-            _theHiddenItemRepository.CreateMany(items);
-            _theTwistedItemRepository.CreateMany(items);
+            List<Item> items = JsonSerializer.Deserialize<List<Item>>(File.ReadAllText("C:\\Users\\Fernando\\Documents\\repo\\bpl3_backend\\BPL3_Backend\\JSONs\\Items.json"));
+            _team1ItemRepository.CreateMany(items);
+            _team3ItemRepository.CreateMany(items);
+            _team2ItemRepository.CreateMany(items);
         }
             
     }

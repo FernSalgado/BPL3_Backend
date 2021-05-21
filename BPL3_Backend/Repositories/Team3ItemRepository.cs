@@ -5,15 +5,15 @@ using System.Linq;
 
 namespace BPL3_Backend.Repositories
 {
-    public class TheFormedItemRepository
+    public class Team3ItemRepository
     {
         private readonly IMongoCollection<Item> _member;
 
-        public TheFormedItemRepository(IDatabaseSettings settings)
+        public Team3ItemRepository(IDatabaseSettings settings)
         {
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
-            _member = database.GetCollection<Item>("TheFormedItems");
+            _member = database.GetCollection<Item>("RuinItems");
         }
 
         public Item Create(Item team)

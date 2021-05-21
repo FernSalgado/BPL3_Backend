@@ -5,39 +5,39 @@ using System.Linq;
 
 namespace BPL3_Backend.Repositories
 {
-    public class TheHiddenItemRepository
+    public class Team3Repository
     {
-        private readonly IMongoCollection<Item> _member;
+        private readonly IMongoCollection<TeamList> _member;
 
-        public TheHiddenItemRepository(IDatabaseSettings settings)
+        public Team3Repository(IDatabaseSettings settings)
         {
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
-            _member = database.GetCollection<Item>("TheHiddenItems");
+            _member = database.GetCollection<TeamList>("Ruin");
         }
 
-        public Item Create(Item team)
+        public TeamList Create(TeamList team)
         {
             _member.InsertOne(team);
             return team;
         }
 
-        public List<Item> CreateMany(List<Item> members)
+        public List<TeamList> CreateMany(List<TeamList> members)
         {
             _member.InsertMany(members);
             return members;
         }
 
-        public IList<Item> Read() =>
+        public IList<TeamList> Read() =>
            _member.Find(m => true).ToList();
 
-        public Item Find(string id) =>
+        public TeamList Find(string id) =>
             _member.Find(m => m.Id == id).SingleOrDefault();
 
-        public void Update(Item member) =>
+        public void Update(TeamList member) =>
             _member.ReplaceOne(m => m.Id == member.Id, member);
 
-        public void UpdateMany(List<Item> members)
+        public void UpdateMany(List<TeamList> members)
         {
             foreach (var doc in members)
             {
