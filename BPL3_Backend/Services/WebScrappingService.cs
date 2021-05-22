@@ -42,23 +42,23 @@ namespace BPL3_Backend.Services
             var team3Items = _team3ItemRepository.Read().ToList();
             var team3 = _teamService.Find("Ruin");
 
-            //TeamItem Team1 = await GetItems(new TeamItem { Items = team1Items, Team = team1 });
-            //TeamItem Team2 = await GetItems(new TeamItem { Items = team2Items, Team = team2 });
-            //TeamItem Team3 = await GetItems(new TeamItem { Items = team3Items, Team = team3 });
-            //_team1ItemRepository.UpdateMany(Team1.Items);
-            //_team2ItemRepository.UpdateMany(Team2.Items);
-            //_team3ItemRepository.UpdateMany(Team3.Items);
+            TeamItem Team1 = await GetItems(new TeamItem { Items = team1Items, Team = team1 });
+            TeamItem Team2 = await GetItems(new TeamItem { Items = team2Items, Team = team2 });
+            TeamItem Team3 = await GetItems(new TeamItem { Items = team3Items, Team = team3 });
+            _team1ItemRepository.UpdateMany(Team1.Items);
+            _team2ItemRepository.UpdateMany(Team2.Items);
+            _team3ItemRepository.UpdateMany(Team3.Items);
 
-            //_ladderService.GetLadder(new List<Team> { Team1.Team, Team2.Team, Team3.Team });
+            _ladderService.GetLadder(new List<Team> { Team1.Team, Team2.Team, Team3.Team });
 
-            _ladderService.GetLadder(new List<Team> { team1, team2, team3});
         }
 
         public async Task<TeamItem> GetItems(TeamItem teamItem)
         {
-            List<string> _allItems = JsonSerializer.Deserialize<List<string>>(File.ReadAllText("C:\\Users\\FERNANDODASILVASALGA\\source\\repos\\BPL3\\BPL3\\JSONs\\ItemList.json"));
-            List<string> _allSets = JsonSerializer.Deserialize<List<string>>(File.ReadAllText("C:\\Users\\FERNANDODASILVASALGA\\source\\repos\\BPL3\\BPL3\\JSONs\\SetList.json"));
+            List<string> _allItems = JsonSerializer.Deserialize<List<string>>(File.ReadAllText("C:\\Users\\Fernando\\Documents\\repo\\bpl3_backend\\BPL3_Backend\\JSONs\\ItemList.json"));
+            List<string> _allSets = JsonSerializer.Deserialize<List<string>>(File.ReadAllText("C:\\Users\\Fernando\\Documents\\repo\\bpl3_backend\\BPL3_Backend\\JSONs\\SetList.json"));
             List<string> _items = new List<string>();
+            if (teamItem.Team.StashUrl == String.Empty) return teamItem;
             for (int i = 1; i < 21; i++)
             {
                     var url = $"{teamItem.Team.StashUrl}/{i}";

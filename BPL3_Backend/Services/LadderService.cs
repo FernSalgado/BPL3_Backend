@@ -53,7 +53,14 @@ namespace BPL3_Backend.Services
                         {
                             if (m.CharacterName != item.character.name.ToString())
                             {
-                                m.CharacterName = item.character.level > m.Level ? item.character.name : m.CharacterName;
+                                if (item.character.level > m.Level)
+                                {
+                                    m.CharacterName = item.character.name;
+                                    m.Class = item.character.Class;
+                                    m.Rank = item.rank;
+                                }
+                                if (item.character.depth != null && item.character.depth.solo > m.Delve)
+                                    m.Delve = item.character.depth.solo;
                                 if (m.CharacterName != item.character.name.ToString()) continue;
                             }
                             m.Class = item.character.Class;

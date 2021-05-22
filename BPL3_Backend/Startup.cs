@@ -89,7 +89,7 @@ namespace BPL3_Backend
             recurringJobManager.AddOrUpdate(
                 "Get Items",
                 () => serviceProvider.GetService<WebScrappingService>().ScrapperItems(),
-                Cron.MinuteInterval(20)
+                Cron.MinuteInterval(15)
                 );
 
             app.UseEndpoints(endpoints =>
