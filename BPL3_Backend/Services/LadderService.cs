@@ -48,7 +48,8 @@ namespace BPL3_Backend.Services
                         if (m.CharacterName == null)
                         {
                             m.CharacterName = item.character.name;
-                            m.Class = item.character.Class;
+                            string c = item.character.Class;
+                            m.Class = IsClassValid(team.AllowedClasses, c) ? c : $"Invalid Class ({item.character.Class})";
                             m.Rank = item.rank;
                         }
                         else
@@ -65,7 +66,7 @@ namespace BPL3_Backend.Services
                                     m.Delve = item.character.depth.solo;
                                 if (m.CharacterName != item.character.name.ToString()) continue;
                             }
-                            m.Class = item.character.Class;
+                            m.Class = IsClassValid(team.AllowedClasses, item.character.Class.ToString()) ? item.character.Class : $"Invalid Class ({item.character.Class})";
                         }
                         m.Level = item.character.level;
                         m.Rank = item.rank;
@@ -157,6 +158,17 @@ namespace BPL3_Backend.Services
             }
 
             return points;
+        }
+        public static bool IsClassValid(List<string> classes, string Class)
+        {
+            try
+            {
+                return classes.Contains(Class);
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
     }
 }
