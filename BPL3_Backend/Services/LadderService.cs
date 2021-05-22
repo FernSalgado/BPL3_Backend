@@ -112,8 +112,11 @@ namespace BPL3_Backend.Services
             points.Add(0);
             foreach (var item in members)
             {
-                points[0] += CalcTeamLevelPoints(item.Level);
-                points[1] += CalcTeamDelvePoints(item.Delve);
+                if (!item.Class.Contains("Invalid")) 
+                {
+                    points[0] += CalcTeamLevelPoints(item.Level);
+                    points[1] += CalcTeamDelvePoints(item.Delve);
+                 }
             }
             return points;
         }
