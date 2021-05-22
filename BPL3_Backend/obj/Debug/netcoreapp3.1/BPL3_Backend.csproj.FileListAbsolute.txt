@@ -175,3 +175,9 @@ C:\Users\Fernando\Documents\repo\bpl3_backend\BPL3_Backend\obj\Debug\netcoreapp3
 C:\Users\Fernando\Documents\repo\bpl3_backend\BPL3_Backend\bin\Debug\netcoreapp3.1\JSONs\ItemList.json
 C:\Users\Fernando\Documents\repo\bpl3_backend\BPL3_Backend\bin\Debug\netcoreapp3.1\JSONs\Items.json
 C:\Users\Fernando\Documents\repo\bpl3_backend\BPL3_Backend\bin\Debug\netcoreapp3.1\JSONs\SetList.json
+C:\Users\Fernando\Documents\repo\bpl3_backend\BPL3_Backend\bin\Debug\netcoreapp3.1\JSONs\credentials.json
+C:\Users\Fernando\Documents\repo\bpl3_backend\BPL3_Backend\bin\Debug\netcoreapp3.1\Google.Apis.dll
+C:\Users\Fernando\Documents\repo\bpl3_backend\BPL3_Backend\bin\Debug\netcoreapp3.1\Google.Apis.Auth.PlatformServices.dll
+C:\Users\Fernando\Documents\repo\bpl3_backend\BPL3_Backend\bin\Debug\netcoreapp3.1\Google.Apis.Auth.dll
+C:\Users\Fernando\Documents\repo\bpl3_backend\BPL3_Backend\bin\Debug\netcoreapp3.1\Google.Apis.Core.dll
+C:\Users\Fernando\Documents\repo\bpl3_backend\BPL3_Backend\bin\Debug\netcoreapp3.1\Google.Apis.Sheets.v4.dll

@@ -39,6 +39,7 @@ namespace BPL3_Backend
             services.AddSingleton<WebScrappingService>();
             services.AddSingleton<TeamService>();
             services.AddSingleton<MemberService>();
+            services.AddSingleton<SheetService>();
             services.AddSingleton<Team3Repository>();
             services.AddSingleton<Team1Repository>();
             services.AddSingleton<Team2Repository>();
@@ -86,12 +87,18 @@ namespace BPL3_Backend
             //    Cron.Monthly()
             //);
 
+            //recurringJobManager.AddOrUpdate(
+            //    "Get Items",
+            //    () => serviceProvider.GetService<WebScrappingService>().ScrapperItems(),
+            //    Cron.MinuteInterval(15)
+            //    );
+
+
             recurringJobManager.AddOrUpdate(
                 "Get Items",
-                () => serviceProvider.GetService<WebScrappingService>().ScrapperItems(),
-                Cron.MinuteInterval(15)
-                );
-
+                () => serviceProvider.GetService<SheetService>().getSheet(),
+                Cron.Hourly()
+               );
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

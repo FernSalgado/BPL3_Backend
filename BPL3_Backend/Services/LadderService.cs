@@ -11,10 +11,12 @@ namespace BPL3_Backend.Services
     {
         private readonly MemberService _memberService;
         private readonly TeamService _teamService;
-        public LadderService(MemberService memberService, TeamService teamService)
+        private readonly SheetService _sheetService;
+        public LadderService(MemberService memberService, TeamService teamService, SheetService sheetService)
         {
             _memberService = memberService;
             _teamService = teamService;
+            _sheetService = sheetService;
         }
         private static readonly HttpClient client = new HttpClient();
         public void GetLadder(List<Team> t)
@@ -86,15 +88,19 @@ namespace BPL3_Backend.Services
                 points.AddRange(CalcPoints(team1Members));
                 points.AddRange(CalcPoints(team2Members));
                 points.AddRange(CalcPoints(team3Members));
+                var gemPoints = _sheetService.getSheet();
                 team1.LevelPoints = points[0];
                 team1.DelvePoints = points[1];
-                team1.TotalPoints = team1.LevelPoints + team1.DelvePoints + team1.SetPoints;
+                team1.GemPoints = gemPoints[0];
+                team1.TotalPoints = team1.LevelPoints + team1.DelvePoints + team1.SetPoints + team1.GemPoints;
                 team2.LevelPoints = points[2];
                 team2.DelvePoints = points[3];
-                team2.TotalPoints = team2.LevelPoints + team2.DelvePoints + team2.SetPoints;
+                team2.GemPoints = gemPoints[1];
+                team2.TotalPoints = team2.LevelPoints + team2.DelvePoints + team2.SetPoints + team2.GemPoints;
                 team3.LevelPoints = points[4];
                 team3.DelvePoints = points[5];
-                team3.TotalPoints = team3.LevelPoints + team3.DelvePoints + team3.SetPoints;
+                team3.GemPoints = gemPoints[2];
+                team3.TotalPoints = team3.LevelPoints + team3.DelvePoints + team3.SetPoints + team3.GemPoints;
                 _teamService.UpdateMany(new List<Team> {team2, team1,team3 });
             }
         }
