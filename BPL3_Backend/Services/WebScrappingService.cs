@@ -55,8 +55,8 @@ namespace BPL3_Backend.Services
 
         public async Task<TeamItem> GetItems(TeamItem teamItem)
         {
-            List<string> _allItems = JsonSerializer.Deserialize<List<string>>(File.ReadAllText("C:\\Users\\Fernando\\Documents\\repo\\bpl3_backend\\BPL3_Backend\\JSONs\\ItemList.json"));
-            List<string> _allSets = JsonSerializer.Deserialize<List<string>>(File.ReadAllText("C:\\Users\\Fernando\\Documents\\repo\\bpl3_backend\\BPL3_Backend\\JSONs\\SetList.json"));
+            List<string> _allItems = JsonSerializer.Deserialize<List<string>>(File.ReadAllText("JSONs\\ItemList.json"));
+            List<string> _allSets = JsonSerializer.Deserialize<List<string>>(File.ReadAllText("JSONs\\SetList.json"));
             List<string> _items = new List<string>();
             if (teamItem.Team.StashUrl == String.Empty) return teamItem;
             for (int i = 1; i < 21; i++)
