@@ -21,6 +21,10 @@ namespace BPL3_Backend.Models
         public int BossPoints { get; set; }
         public int GemPoints { get; set; }
         public string StashUrl { get; set; }
+        public string CompletedSets { get; set; }
+        public int ObtainedGems { get; set; }
+        public int ObtainedUniques { get; set; }
+        public int ObtainedSets { get; set; }
         public List<string> AllowedClasses { get; set; }
     }
 }

@@ -87,18 +87,18 @@ namespace BPL3_Backend
             //    Cron.Monthly()
             //);
 
-            //recurringJobManager.AddOrUpdate(
-            //    "Get Items",
-            //    () => serviceProvider.GetService<WebScrappingService>().ScrapperItems(),
-            //    Cron.MinuteInterval(15)
-            //    );
-
-
             recurringJobManager.AddOrUpdate(
                 "Get Items",
-                () => serviceProvider.GetService<SheetService>().getSheet(),
-                Cron.Hourly()
-               );
+                () => serviceProvider.GetService<WebScrappingService>().ScrapperItems(),
+                Cron.MinuteInterval(15)
+                );
+
+
+            //recurringJobManager.AddOrUpdate(
+            //    "Get Items",
+            //    () => serviceProvider.GetService<SheetService>().getSheet(),
+            //    Cron.Hourly()
+            //   );
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

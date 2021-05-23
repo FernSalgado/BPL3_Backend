@@ -93,15 +93,18 @@ namespace BPL3_Backend.Services
                 team1.LevelPoints = points[0];
                 team1.DelvePoints = points[1];
                 team1.GemPoints = gemPoints[0];
-                team1.TotalPoints = team1.LevelPoints + team1.DelvePoints + team1.SetPoints + team1.GemPoints;
+                team1.ObtainedGems = gemPoints[0] / 100;
+                team1.TotalPoints = team1.LevelPoints + team1.DelvePoints + team1.SetPoints + team1.GemPoints + team1.BossPoints;
                 team2.LevelPoints = points[2];
                 team2.DelvePoints = points[3];
                 team2.GemPoints = gemPoints[1];
-                team2.TotalPoints = team2.LevelPoints + team2.DelvePoints + team2.SetPoints + team2.GemPoints;
+                team2.ObtainedGems = gemPoints[1] / 100;
+                team2.TotalPoints = team2.LevelPoints + team2.DelvePoints + team2.SetPoints + team2.GemPoints + team2.BossPoints;
                 team3.LevelPoints = points[4];
                 team3.DelvePoints = points[5];
                 team3.GemPoints = gemPoints[2];
-                team3.TotalPoints = team3.LevelPoints + team3.DelvePoints + team3.SetPoints + team3.GemPoints;
+                team3.ObtainedGems = gemPoints[2] / 100;
+                team3.TotalPoints = team3.LevelPoints + team3.DelvePoints + team3.SetPoints + team3.GemPoints + team3.BossPoints;
                 _teamService.UpdateMany(new List<Team> {team2, team1,team3 });
             }
         }
