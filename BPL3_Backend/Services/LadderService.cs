@@ -41,7 +41,7 @@ namespace BPL3_Backend.Services
                 {
                     update = true;
                     string name = item.account.name;
-                    Member m = members.Where(m => m.AccountName.ToLower() == name.ToLower()).FirstOrDefault();
+                    Member m = members.Where(m => m.AccountName.Trim().ToLower() == name.Trim().ToLower()).FirstOrDefault();
                     if (m != null)
                     {
                         var team = teams.Where(t => t.Name == m.TeamName).FirstOrDefault();
@@ -62,15 +62,19 @@ namespace BPL3_Backend.Services
                                     m.Class = item.character.Class;
                                     m.Rank = item.rank;
                                 }
-                                if (item.character.depth != null && item.character.depth.solo > m.Delve)
-                                    m.Delve = item.character.depth.solo;
+                                
                                 if (m.CharacterName != item.character.name.ToString()) continue;
                             }
                             m.Class = IsClassValid(team.AllowedClasses, item.character.Class.ToString()) ? item.character.Class : $"Invalid Class ({item.character.Class})";
                         }
                         m.Level = item.character.level;
                         m.Rank = item.rank;
-                        m.Delve = item.character.depth != null ? item.character.depth.solo : 0;
+                        var teadfas = item.character.depth;
+                        if (item.character.depth != null && item.character.depth.solo > m.Delve)
+                        {
+                            m.Delve = item.character.depth.solo;
+                            m.Delve = item.character.depth != null ? item.character.depth.solo : 0;
+                        }
                     }
                 }
                 count += 200;
@@ -93,6 +97,7 @@ namespace BPL3_Backend.Services
                 team1.LevelPoints = points[0];
                 team1.DelvePoints = points[1];
                 team1.GemPoints = gemPoints[0];
+                team1.SetPoints += 1000; //Jewel
                 team1.ObtainedGems = gemPoints[0] / 100;
                 team1.TotalPoints = team1.LevelPoints + team1.DelvePoints + team1.SetPoints + team1.GemPoints + team1.BossPoints;
                 team2.LevelPoints = points[2];

@@ -5,7 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.Encodings.Web;
 using System.Text.Json;
+using System.Text.Unicode;
 using System.Threading.Tasks;
 
 namespace BPL3_Backend.Services
@@ -60,8 +62,16 @@ namespace BPL3_Backend.Services
             {
                 item.Obtained = "False";
             }
-            List<string> _allItems = JsonSerializer.Deserialize<List<string>>(File.ReadAllText("JSONs\\ItemList.json"));
-            List<string> _allSets = JsonSerializer.Deserialize<List<string>>(File.ReadAllText("JSONs\\SetList.json"));
+            var encoderSettings = new TextEncoderSettings();
+            encoderSettings.AllowRange(UnicodeRanges.All);
+            var options = new JsonSerializerOptions
+            {
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                WriteIndented = true
+            };
+            List<string> _allItems = JsonSerializer.Deserialize<List<string>>(File.ReadAllText("JSONs\\ItemList.json"), options);
+            _allItems.Add("Doppelgänger Guise");
+            List<string> _allSets = JsonSerializer.Deserialize<List<string>>(File.ReadAllText("JSONs\\SetList.json" ),options);
             List<string> _items = new List<string>();
             if (teamItem.Team.StashUrl == String.Empty) return teamItem;
             for (int i = 1; i < 21; i++)
@@ -81,11 +91,24 @@ namespace BPL3_Backend.Services
                             node = node.PreviousElementSibling;
                             count++;
                         }
-                        if (count == 4) _item = "Impresence (Cold)";
-                        if (count == 3) _item = "Impresence (Lightning)";
-                        if (count == 2) _item = "Impresence (Fire)";
-                        if (count == 1) _item = "Impresence (Phys)";
-                        if (count == 0) _item = "Impresence (Chaos)";
+                        if (count == 0) _item = "Impresence (Cold)";
+                        if (count == 1) _item = "Impresence (Fire)";
+                        if (count == 2) _item = "Impresence (Lightning)";
+                        if (count == 3) _item = "Impresence (Phys)";
+                        if (count == 4) _item = "Impresence (Chaos)";
+                    }
+                    if (_item == "Volkuur's Guidance")
+                    {
+                        var count = 0;
+                        var node = item.PreviousElementSibling;
+                        while (node != null && node.FirstElementChild.FirstElementChild.InnerHtml == "Volkuur's Guidance")
+                        {
+                            node = node.PreviousElementSibling;
+                            count++;
+                        }
+                        if (count == 0) _item = "Volkuur's Guidance (Fire)";
+                        if (count == 1) _item = "Volkuur's Guidance (Cold)";
+                        if (count == 2) _item = "Volkuur's Guidance (Lightning)";
                     }
                     _items.Add(_item);
                 }
@@ -93,23 +116,26 @@ namespace BPL3_Backend.Services
             var results = _items.Select(i => i).ToList().Intersect(_allItems.Select(i => i).ToList()).ToList();
             foreach (var item in results)
             {
-                Item i = teamItem.Items.Where(i => i.Name == item && i.Obtained == "False").FirstOrDefault();
+                Item i = teamItem.Items.Where(i => i.Name.ToLower() == item.ToLower() && i.Obtained == "False").FirstOrDefault();
                 if (i != null)
                 {
                     i.Obtained = "True";
-                    teamItem.Team.SetPoints += 250;
+                    if (i.SetName != "Labyrinth Jewel Set") teamItem.Team.SetPoints += 250;
                 }
             }
             int cSets = 0;
+            string sets = "";
             foreach (var item in _allSets)
             {
                 var set = teamItem.Items.Where(i => i.SetName == item && i.Obtained == "False").ToList();
-                if (set.Count == 0 && !teamItem.Team.CompletedSets.Contains(item)) 
+                if (set.Count == 0) 
                 {
                     teamItem.Team.SetPoints += 500;
                     cSets += 1;
+                    sets += item + ";";
                 } 
             }
+            teamItem.Team.CompletedSets = sets;
             teamItem.Team.ObtainedSets = cSets;
             teamItem.Team.ObtainedUniques = results.Count();
             return teamItem;
